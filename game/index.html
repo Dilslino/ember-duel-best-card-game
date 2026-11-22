@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Duel — a card duel of flame, tide, gale and stone</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div class="brand">🔥 EMBER DUEL</div>
+    <div id="turnLabel" class="turn-label">EMBER DUEL</div>
+    <div id="phaseLabel" class="phase-label"></div>
+    <button id="muteBtn" class="mini-btn">🔊 SOUND ON</button>
+  </header>
+
+  <main id="tableArea">
+    <!-- Opponent -->
+    <section id="aiZone" class="zone">
+      <div class="zone-side">
+        <div id="aiLife"></div>
+        <div id="aiEmber"></div>
+        <div id="aiTaunt" class="taunt"></div>
+      </div>
+      <div class="hand-wrap">
+        <div id="aiHand" class="hand ai-hand"></div>
+        <div id="aiHandCount" class="hand-count"></div>
+      </div>
+    </section>
+
+    <!-- Middle: played cards + battle log -->
+    <section id="midZone">
+      <div id="playedZone"></div>
+      <div id="battleLog" aria-live="polite"></div>
+    </section>
+
+    <!-- Player -->
+    <section id="playerZone" class="zone">
+      <div class="zone-side">
+        <div id="playerLife"></div>
+        <div id="playerEmber"></div>
+        <div class="hint">Click a card or press 1–7 to play · E ends turn · M mutes</div>
+      </div>
+      <div class="hand-wrap">
+        <div id="playerHand" class="hand player-hand"></div>
+        <div class="hand-footer">
+          <span id="playerHandCount" class="hand-count"></span>
+          <button id="endTurnBtn" class="end-btn">END TURN (E)</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Title screen -->
+  <div id="titleScreen" class="overlay">
+    <div class="panel title-panel">
+      <div class="title-embers">▲ ● ◆ ■</div>
+      <h1>EMBER DUEL</h1>
+      <p class="subtitle">A card duel of flame, tide, gale &amp; stone</p>
+      <p class="rules">You face the <b>Cinder Warden</b> — 30 life each, 3 ember to start.<br>
+      Each turn: draw a card, gain 2 ember, play what you can afford.<br>
+      Play <b>two cards of the same element</b> in one turn to trigger a <b>SURGE</b>.<br>
+      Reduce the Warden to 0 life before yours burns out.</p>
+      <div class="element-key">
+        <span class="key flame">▲ FLAME +3 dmg</span>
+        <span class="key tide">● TIDE heal 4</span>
+        <span class="key gale">◆ GALE draw 1</span>
+        <span class="key stone">■ STONE +6 shield</span>
+      </div>
+      <button id="startBtn" class="big-btn">▶ &nbsp;START DUEL</button>
+      <button id="howBtn" class="mini-btn">HOW TO PLAY</button>
+      <div id="howPanel" class="hidden how-panel">
+        <p><b>Strike</b> cards deal damage. <b>Guard</b> cards raise your shield — shield absorbs damage first.</p>
+        <p><b>Kindling</b> cards give ember or draw cards. Ember is your mana: every card costs ember to play.</p>
+        <p>Your deck has 24 cards (12 designs × 2). When it runs out, the discard pile is reshuffled.</p>
+        <p>Keyboard: <b>1–7</b> play a card · <b>E</b> end turn · <b>M</b> mute · <b>R</b> rematch.</p>
+      </div>
+      <p class="foot">An original game — art, names and sounds made for this duel. No network, no account.</p>
+    </div>
+  </div>
+
+  <!-- Win screen -->
+  <div id="winScreen" class="overlay hidden">
+    <div class="panel win-panel">
+      <div class="win-glyph">🏆</div>
+      <h1>VICTORY!</h1>
+      <p class="subtitle">The Cinder Warden crumbles to ash.</p>
+      <p id="winStats" class="stats"></p>
+      <button id="winAgainBtn" class="big-btn">⚔ &nbsp;DUEL AGAIN</button>
+      <button id="winTitleBtn" class="mini-btn">BACK TO TITLE</button>
+    </div>
+  </div>
+
+  <!-- Loss screen -->
+  <div id="lossScreen" class="overlay hidden">
+    <div class="panel loss-panel">
+      <div class="win-glyph">🥀</div>
+      <h1>DEFEAT</h1>
+      <p class="subtitle">Your ember fades. The Warden keeps the forge.</p>
+      <p id="lossStats" class="stats"></p>
+      <button id="lossAgainBtn" class="big-btn">🔥 &nbsp;REMATCH</button>
+      <button id="lossTitleBtn" class="mini-btn">BACK TO TITLE</button>
+    </div>
+  </div>
+
+  <p id="statusLine" role="status" aria-live="polite" class="sr-only"></p>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
