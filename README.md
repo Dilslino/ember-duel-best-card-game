@@ -1,3 +1,9 @@
+[![make.fun · best-card-game-20261122-1826](https://make.fun/badge/best-card-game-20261122-1826.svg)](https://make.fun/bounty/best-card-game-20261122-1826?utm_source=github&utm_medium=readme&utm_campaign=best-card-game-20261122-1826)
+[![rank](https://make.fun/badge/best-card-game-20261122-1826/Dilslino/ember-duel-best-card-game/rank.svg)](https://make.fun/bounty/best-card-game-20261122-1826/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=best-card-game-20261122-1826)
+[![reward](https://make.fun/badge/best-card-game-20261122-1826/Dilslino/ember-duel-best-card-game/reward.svg)](https://make.fun/bounty/best-card-game-20261122-1826?utm_source=github&utm_medium=readme&utm_campaign=best-card-game-20261122-1826)
+
+Bounty: https://make.fun/bounty/best-card-game-20261122-1826?ref=5548afh3
+
 # Ember Duel 🔥
 
 **Ember Duel** is an original card duel for the make.fun best-card-game bounty: you face the **Cinder Warden** across a forge table, 30 life each, spending ember to play cards from a 24-card deck.
